@@ -1063,3 +1063,105 @@ for line in range(5):
         print(dice_art.get(die)[line],end=" ")
     print(" ")
 ```
+### **Functions:-**
+
+```python
+# Function - functions are reusable code blocks
+def happybirthday(name,age):
+    print(f"happy birthday {name}")
+    print(f"you are {age} years old")
+    print(f"Happy birthday to you !")
+
+happybirthday("nikki",20)
+happybirthday("steve",20)
+happybirthday("raviteja",20)
+```
+
+```python
+def display_invoice(username,amount,due_date):
+    print(f"hello {username}")
+    print(f"your bill is of {amount:.2f} is due on {due_date}")
+
+display_invoice("nikhil",500,"1/3/2026")
+```
+
+```python
+def create_name(first,last):
+    first=first.capitalize()
+    last=last.capitalize()
+    return first +" "+last
+
+print(create_name("nikhil","vytla"))
+```
+
+#### Default arguments:-
+
+```python
+#default arguments- A default value for certain parameters
+#                   default is used when that argument is omitted
+#                   make your functions more flexible,reduces # of arguments
+#                   1. positional, 2. Default 3.keyword 4. arbitrary
+
+def net_price(list_price, discount=0,tax =0.05):
+    return list_price*(1-discount) *(1+tax)
+
+print(net_price(500))
+print(net_price(500,0.1))
+print(net_price(500,0.1,0))
+#normally we we pass 3 parameters if we skip passing even one that throws error
+#so here we have default arg,we give them while defining function ,even if we skip the default values will be fetched and used
+
+```
+
+```python
+import time
+def counter(end,start=0):
+    for x in range(start,end+1):
+        print(x)
+        time.sleep(1)
+    print("Done!")
+
+counter(10)
+```
+
+#### Keyword arguments:-
+
+```python
+#keyword arguments = an argument preceeded by an identifier
+#                   helps with readability
+#                   order of arguments doesnt matter
+#                   1.positional 2.default 3.keyword 4.arbitrary
+
+def hello(greeting, title,first,last):
+    print(f"{greeting} {title} {first} {last}")
+
+hello("Hello" ,title="Mr.",last="nikhil",first="vytla")
+#just we will give parameter name when we are passing the arguments ,we can alter the order,no problem with that when we are using keyword args
+```
+
+#### *args and **kwargs:-
+
+```python
+# *args =allows you to pass multiple non-key arguments
+# **kwargs= allows you to pass multiple keyword-arguments
+#           * unpacking operator
+#           1. positional 2.default 3.keyword 4.arbitary
+
+def add(*nums):
+    total=0
+    for num in nums:
+        total+=num
+    return total
+
+print(add(1))
+
+#this saves data in tuples format while **kwargs stores data in dictonary format
+```
+
+```python
+def display_name(*args):
+    for arg in args:
+        print(arg,end=" ")
+    
+display_name("Dr. ", "spongebob","Harold","squarepants")
+```
