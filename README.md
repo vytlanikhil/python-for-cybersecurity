@@ -1165,3 +1165,64 @@ def display_name(*args):
     
 display_name("Dr. ", "spongebob","Harold","squarepants")
 ```
+#### Iterables:-
+
+```python
+#iterables - An object/collection that can return its elements one at a time,
+#            allowing it to be iterated in a loop
+
+# numbers=[1,2,3,4,5]
+
+# for number in numbers:
+#     print(number)
+# for number in reversed(numbers):
+#     print(number,end=" ")
+    
+
+# digits=(1,2,3,4,5)
+
+# for digit in digits:
+#     print(digit)
+# for digit in reversed(digits):
+#     print(digit)
+
+# fruits={"apple","mango","banana","coconut"}
+
+# for fruit in fruits:
+#     print(fruit)
+# for fruit in reversed(fruits): -->this throws error reversed() function will not work here
+#      print(fruit)
+
+# name="Bro code"
+# for letter in name:
+#     print(letter,end=" ")
+
+# my_dictonary={"A":1, "B":2 , "C":3}
+
+# for key,value in my_dictonary.items():
+#     print(key,value)
+```
+
+#### Membership operators:-
+
+```python
+#Membership operators - used to test whether a value or variable is found in a sequence
+#                       strings,sets,tuples or dictonaries
+#                       1. in
+#                       2.not in 
+
+word="APPLE"
+
+guess=input("Guess a letter: ")
+
+# if guess in word:
+#     print(f"{guess} is present in word")
+# else:
+#     print(f"{guess} was not found")
+
+if guess not in word:
+    print(f"{guess} was not found")
+else:
+    print(f"{guess} is present in the word")
+
+```
