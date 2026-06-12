@@ -1226,3 +1226,141 @@ else:
     print(f"{guess} is present in the word")
 
 ```
+```python
+grades={"nikhil":"A",
+        "santhosh":"B",
+        "sandy":"C",
+        "ravi":"C"}
+
+for student in grades:
+    print(f"{student}: {grades[student]}")
+
+name=input("Enter you  name: ")
+
+if name in grades:
+    print(f"Found !,This is your grade {grades[name]}")
+else:
+    print(f"{name} Not found")
+```
+
+```python
+email="demo@demo.com"
+
+if "@" and "." in email:
+    print("Valid !")
+else:
+    print("Not valid")
+```
+
+#### list comprehension :-
+
+```python
+#list comprehension = A consise way to create lists in python 
+#                   compact and easier to read then traditional loops
+#                   expression for value in iterable if condition
+
+#syntax => name = [expression for X in iterable]
+
+doubles = [x*2 for x in range(1,11)]
+
+triples = [y*3 for y in range(1,11)]
+
+squares = [z*z for z in range(1,11)]
+
+print(doubles)
+print(triples)
+print(squares)
+```
+
+```python
+fruits=["apple","mango","pineapple"]
+
+fruit_caps=[fruit.capitalize() for fruit in fruits]
+print(fruit_caps)
+```
+
+```python
+numbers=[1,-2,3,-4,5,-6,7,-8]
+
+positive_numbers=[num for num in numbers if num>=0]
+negative_numbers=[num for num in numbers if num <0]
+even_numbers=[number for number in numbers if number%2==0]
+odd_numbers=[number for number in numbers if number%2==1]
+print(positive_numbers)
+print(negative_numbers)
+print(even_numbers)
+print(odd_numbers)
+```
+
+```python
+grades=[80,85,60,55,45,90,40,66]
+
+passed_grades=[grade for grade in grades if grade>=65]
+
+print(f"The passed grades are {passed_grades}")
+```
+
+#### Match case statements:-
+
+```python
+#Matcch-case ststement (switch):An alternative to using 'elif' ststements
+#                       Execute some code if a value matches a 'case'
+#                       Benifits: cleaner and syntax is more readable
+
+def day_of_week(day):
+    match day:
+        case 1:
+            return "It is Sunday"
+        case 2:
+            return "It is Monday"
+        case 3:
+            return "It is Tuesday"
+        case 4:
+            return "It is Wednesday"
+        case 5:
+            return "It is Thursday"
+        case 6:
+            return "It is Friday"
+        case 7:
+            return "It is Saturday"
+        case _:
+            return "Not a Valid day"
+
+print(day_of_week(2))
+```
+
+```python
+def is_weekend(day):
+    match day:
+        case "Sunday":
+            return True
+        case "Monday":
+            return False
+        case "Tuesday":
+            return False
+        case "Wednesday":
+            return False
+        case "Thursday":
+            return False
+        case "Friday":
+            return False
+        case "Saturday":
+            return True
+        case _:
+            return "Not a Valid day"
+
+print(is_weekend("Sunday"))
+```
+
+```python
+def is_weekend(day):
+    match day:
+        case "Sunday" | "Saturday":
+            return True
+        case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
+            return False
+        case _:
+            return "Not a Valid day"
+
+print(is_weekend("Sunday"))
+```
